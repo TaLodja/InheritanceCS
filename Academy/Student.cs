@@ -32,7 +32,7 @@ namespace Academy
         }
         public override string ToString()
         {
-            return base.ToString()+$"{Speciality} {Group} {Rating} {Attendance}";
+            return base.ToString()+$" {Speciality} {Group} {Rating} {Attendance}";
         }
     }
 }
