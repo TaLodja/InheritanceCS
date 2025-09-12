@@ -1,8 +1,10 @@
 ﻿//#define CLASS_CHECK
 //#define TO_CONSOLE
 //#define WRITE_TO_FILE
+#define READ_FROM_FILE
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -36,14 +38,7 @@ namespace Academy
                 new Graduate("Schreder", "Hank", 40, "Criminalistic", "WW_220", 40, 60, "How to catch Heisenberg"),
                 new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 99)
                };
-            foreach (Human i in group)
-            {
-                Console.WriteLine(i);
-            }
-            /*for (int i = 0; i < group.Length; i++)
-            {
-                Console.WriteLine(group[i]);
-            } */
+            FileWork.Print(group);
 #endif
 #if WRITE_TO_FILE
             Human[] group = new Human[]
@@ -54,16 +49,12 @@ namespace Academy
                 new Graduate("Schreder", "Hank", 40, "Criminalistic", "WW_220", 40, 60, "How to catch Heisenberg"),
                 new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 99)
                    };
-            string path = @"C:\Users\Владелец\source\repos\InheritanceCS\Academy\group.txt";
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                foreach (Human i in group)
-                {
-                    sw.WriteLine(i.ToString());
-                }
-            } 
+            FileWork.PrintToFile(group, @"C:\\Users\\Владелец\\source\\repos\\InheritanceCS\\Academy\\group1.txt");
 #endif
-
+#if READ_FROM_FILE
+            Human[] group = FileWork.ReadFromFile(@"C:\Users\Владелец\source\repos\InheritanceCS\Academy\group1.txt");
+            FileWork.Print(group);
+#endif
         }
     }
 }

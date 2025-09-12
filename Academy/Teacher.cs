@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Academy
@@ -28,6 +29,17 @@ namespace Academy
         public override string ToString()
         {
             return base.ToString()+$" {Speciality} {Experience}";
+        }
+        public override string ToStringInFile()
+        {
+            return base.ToStringInFile() + $",{Speciality},{Experience}";
+        }
+        public override Human Init(string[] parameters)
+        {
+            base.Init(parameters);
+            Speciality = parameters[4];
+            Experience = Convert.ToInt32(parameters[5]);
+            return this;
         }
     }
 }

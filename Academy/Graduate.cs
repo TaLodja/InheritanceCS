@@ -28,5 +28,15 @@ namespace Academy
         {
             return base.ToString()+$" {Subject}";
         }
+        public override string ToStringInFile()
+        {
+            return base.ToStringInFile() + $",{Subject}";
+        }
+        public override Human Init(string[] parameters)
+        {
+            base.Init(parameters);
+            Subject = parameters[8];
+            return this;
+        }
     }
 }

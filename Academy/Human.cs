@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Academy
@@ -27,6 +29,17 @@ namespace Academy
         public override string ToString()
         {
             return base.ToString() + $" {LastName} {FirstName} {Age}";
+        }
+        public virtual string ToStringInFile()
+        {
+            return GetType().ToString() + $",{LastName},{FirstName},{Age}";
+        }
+        public virtual Human Init(string[] parameters)
+        {
+            LastName = parameters[1];
+            FirstName = parameters[2];
+            Age = Convert.ToInt32(parameters[3]);
+            return this;
         }
     }
 }
