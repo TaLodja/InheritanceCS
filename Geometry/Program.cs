@@ -30,7 +30,12 @@ namespace Geometry
 
             Square square = new Square(80, 500, 10, 3, Color.Red);
             square.Info(e);
-            GetDiagonal(square);
+
+            Ellipse ellipse = new Ellipse(80, 50, 600, 10, 1, Color.Azure);
+            ellipse.Info(e);
+
+            Circle circle = new Circle(80, 700, 10, 3, Color.BlueViolet);
+            circle.Info(e);
         }
         static void GetDiagonal(IHaveDiagonal d)
         {

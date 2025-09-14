@@ -72,6 +72,7 @@ namespace Geometry
             Console.WriteLine($"Площадь фигуры: {GetArea()}");
             Console.WriteLine($"Перимеетр фигуры: {GetPerimeter()}");
             Draw(e);
+            Console.WriteLine();
         }
     }
 }
